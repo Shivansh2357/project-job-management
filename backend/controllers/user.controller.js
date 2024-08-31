@@ -127,7 +127,11 @@ export const updateProfile = async (req, res) => {
             });
         }
 
-        const skillsArray = skills.split(",");
+        let skillsArray;
+        if(skills){
+            const skillsArray = skills.split(",");
+        }
+        
         const userId = req.id;
         let user = await User.findById(userId);
 
